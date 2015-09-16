@@ -72,6 +72,11 @@ RUN export VERSION=`php -r "echo PHP_MAJOR_VERSION.PHP_MINOR_VERSION;"` \
     && mv /tmp/blackfire-*.so `php -r "echo ini_get('extension_dir');"`/blackfire.so \
     && echo "extension=blackfire.so\nblackfire.agent_socket=\${BLACKFIRE_PORT}\nblackfire.log_file=/var/log/blackfire.log\nblackfire.log_level=4" > /etc/php5/fpm/conf.d/blackfire.ini
 
+# php-cs-fixer
+RUN curl http://get.sensiolabs.org/php-cs-fixer.phar -o php-cs-fixer \
+    && chmod a+x php-cs-fixer \
+    && mv php-cs-fixer /usr/local/bin/php-cs-fixer
+
 # Start
 ADD start.sh /opt/start.sh
 RUN chmod +x /opt/*.sh
