@@ -22,6 +22,7 @@ RUN apt-get update && apt-get install --no-install-recommends -y \
     vim \
     ca-certificates \
     mysql-client \
+    openssh-client \
     netcat \
  && apt-get autoremove -y && apt-get clean && rm -r /var/lib/apt/lists/*
 

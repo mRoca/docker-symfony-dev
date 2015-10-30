@@ -1,6 +1,6 @@
 # docker-symfony-dev
 
-Docker image for Symfony2 website development containing nginx, php-fpm, apc, [composer](https://getcomposer.org/), [xDebug](/app/Resources/doc/docker.md#xdebug), [blackfire](https://blackfire.io) & [php-cs-fixer](https://github.com/FriendsOfPHP/PHP-CS-Fixer).
+Docker image for Symfony2 website development containing git, nginx, php-fpm, apc, [composer](https://getcomposer.org/), [xDebug](/app/Resources/doc/docker.md#xdebug), [blackfire](https://blackfire.io) & [php-cs-fixer](https://github.com/FriendsOfPHP/PHP-CS-Fixer).
 
 ## Usage
 
