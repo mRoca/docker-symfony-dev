@@ -7,7 +7,7 @@ chmod a+r /var/log/php5-fpm.log /var/log/nginx/access.log /var/log/nginx/error.l
 
 echo "Injecting app env variable"
 VHOST_FILE="/etc/nginx/sites-available/default"
-for _curVar in `env | awk -F = '$1 ~ /.+_.+/ {print $1}'`;do
+for _curVar in `env | grep -v : | awk -F = '$1 ~ /.+_.+/ {print $1}'`;do
     if [[ ! "${_curVar}" =~ "." ]]; then
         if grep -q "fastcgi_param ${_curVar} " "$VHOST_FILE"; then
             sed -i "s=^        fastcgi_param ${_curVar} .*=        fastcgi_param ${_curVar} ${!_curVar};=g" "$VHOST_FILE"
